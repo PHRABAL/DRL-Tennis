@@ -1,4 +1,4 @@
-<img src="https://s3.amazonaws.com/video.udacity-data.com/topher/2018/May/5af7955a_tennis/tennis.png" width="600" height="300">
+<img src="https://user-images.githubusercontent.com/10624937/42135623-e770e354-7d12-11e8-998d-29fc74429ca2.gif">
 
 # DRL - Multi-Agent DDPG Algorithm - Tennis Collaboration
 
@@ -33,3 +33,8 @@ Below are two graphs showing the improved performance of Exploratory Boost. Each
 <img src="Noise_decay_method_versus_Exploratory_Boost.png">
 
 <i>LEFT: Best result from using the traditional slow transition from explore to exploit. RIGHT: Best result from Exploratory Boost approach.</i>
+
+
+## Setup Instructions
+
+To reproduce this model on a Mac, clone the <a href="https://github.com/udacity/deep-reinforcement-learning">Udacity DRLND repo</a>, then place the tennis.app.zip file in the p3_collab-compet folder. Also place the Juputer notebook there and run it.
