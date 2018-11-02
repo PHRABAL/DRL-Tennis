@@ -11,7 +11,7 @@ This environment and the use of the Mutli-Agent Deep Deterministic Policy Gradie
 
 At first the agents randomly take actions and record the feedback, But, eventually they begin to take those experiences and learn from them using separate deep neural networks under the MADDPG algorithm.
 
-The attached code written in Python, using PyTorch and presented in a Jupyter Notebook, demonstrates how the agents learn and eventually achieve the average score of 0.5 with 384 episodes.
+The attached code written in Python, using PyTorch and presented in a Jupyter Notebook, demonstrates how the agents learn and eventually achieve the average score of 0.5 in 384 episodes. The attached <a href="Report.md">Report</a> describes the algorithm and methodology in detail, including the introduction of Exploratory Boost.
 
 ## Methodology
 
