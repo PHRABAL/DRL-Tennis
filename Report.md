@@ -1,20 +1,10 @@
 # DRL - Multi-Agent DDPG Algorithm - Tennis Collaboration
 
-## Overview
-Using the Unity agent/environment "Tennis", this deep reinforcement learning task trains two AI agents to play tennis with each other in a cooperative way. The agents are rewarded for keeping the ball in play as long as possible. The task is considered solved when the average reward of the winning agent each episode hits 0.5 over 100 consecutive episodes.
+### Model Architecture
+The Udacity provided DDPG code in PyTorch was adapted to employ two agents acting independently, but with a shared experience buffer. Each agent had its own set of deep neural networks (local and target actors and critics), each with two hidden layers of 256-128 nodes, with ReLU activation functions on the hidden layers and tanh on the output layers. The agents shared one experience memory buffer.
 
-The agents receive feedback in the form of a reward after taking each action. They decide whether to move their rackets forward or backward and at what velocity. They also can decide to jump. A +0.1 reward is given if the agent hits the ball over the net and a -0.01 penalty if they miss the ball or hit it out of bounds. The algorithm provides to each agent the velocity and position of both agents and the ball, but only tells each agent their own reward, not the reward of the other agent.
-
-This environment and the use of the Mutli-Agent Deep Deterministic Policy Gradient (MADDPG) algorithm as described above results in an unusual structure of game play. The agents are not incentivized to perform better than their opponent, so it is not a competitive structure. However, the agents do not formulate a shared strategy to keep the ball in play for as long as possible, so the structure is not a true cooperative team effort either. Each agent acts independently, without coordinating their actions, but their individual goals are such that it results in cooperative play. When one agent successfully keeps the ball in play, the other agent benefits by having the opportunity to increase its reward by also keeping the ball in play in return.
-
-At first the agents randomly take actions and record the feedback, But, eventually they begin to take those experiences and learn from them using separate deep neural networks under the MADDPG algorithm.
-
-The attached code written in Python, using PyTorch and presented in a Jupyter Notebook, demonstrates how the agents learn and eventually achieve the average score of 0.5 with 384 episodes.
-
-## Methodology
-
-### Model Overview
-As seen in the code, the MADDPG algorithm is used to train the two agents. MADDPG is a multi-agent variant of DDPG, a model-free, off-policy, policy gradient-based algorithm that uses two separate deep neural networks (one actor, one critic) to both explore the stocastic environment and, separately, learn the best policy to achieve maximum reward. DDPG has been shown to be quite effective at continuous control tasks and here the multi-agent version is applied to the continuous control task of playing tennis.
+### Hyperparameters
+A learning rate of 1e-3 on each DNN and batch size of 128 were used along with replay buffer size of 1e6, gamma .99 and Tau of 6e-2. Each agent took one step, then learned once, then repeated. After optimizing these hyperparameters, the agents were learning and achieving the desired goal of 0.5 average reward. However, I was not satisfied with the fact that the agents took several hundred episodes to gain traction and start playing effectively. I determined that the exploitation-exploration balance needed further work to have the agents learn faster.
 
 ### Exploitation vs. Exploration
 
@@ -31,3 +21,8 @@ Below are two graphs showing the improved performance of Exploratory Boost. Each
 <img src="Noise_decay_method_versus_Exploratory_Boost.png">
 
 <i>LEFT: Best result from using the traditional slow transition from explore to exploit. RIGHT: Best result from Exploratory Boost approach.</i>
+
+the long lead up of early episodes where the agents did not seem to get any traction. There was no change to the default Ornstein-Uhlenbeck noise parameters (0.15 theta and 0.2 sigma.)
+
+
+
