@@ -14,7 +14,9 @@ When training agents to succeed in an environment where the rules, boundaries an
 
 To address this balance, I created the Exploratory Boost method. The approach essentially sets aside achieving rewards by the agent for a fixed period of time at the beginning of training in favor of wild, broad exploration of the environment. Then, at an optimal time determined through tuning, all exploration is cut off in favor of exploiting what has been experienced thus far with an all out pursuit of maximum reward. My approach discards the conventional deep reinforcement learning approach which slowly shifts agents from exploring to exploiting over time and, instead, I focus the agents mainly on one task (exploration), then only the other (exploitation.)
 
-Below are two graphs showing the improved performance of Exploratory Boost. Each had identical hyperparameters, except the noise (exploration) settings. <strong>Notice that in addition to faster overall convergence to the goal, Exploratory Boost also results in far fewer outlier rewards at the low end (blue that's below the yellow trend line.) The agents are experiencing far fewer poor performing episodes. They are more consistent in reaching a decent reward each time. This indicates Exploratory Boost has resulted in a higher quality of learning.</strong>
+Below are two graphs showing the improved performance of Exploratory Boost. Each had identical hyperparameters, except the noise (exploration) settings. 
+
+<strong>Notice that in addition to faster overall convergence to the goal, Exploratory Boost also results in far fewer outlier rewards at the low end (blue that's below the yellow trend line.) The agents are experiencing far fewer poor performing episodes. They are more consistent in reaching a decent reward each time. This indicates Exploratory Boost has resulted in a higher quality of learning.</strong>
 
 <img src="Noise_decay_method_versus_Exploratory_Boost.png">
 
