@@ -13,28 +13,6 @@ At first the agents randomly take actions and record the feedback, But, eventual
 
 The attached code written in Python, using PyTorch and presented in a Jupyter Notebook, demonstrates how the agents learn and eventually achieve the average score of 0.5 in 384 episodes. The attached <a href="Report.md">Report</a> describes the algorithm and methodology in detail, including the introduction of Exploratory Boost.
 
-## Methodology
-
-### Model Overview
-As seen in the code, the MADDPG algorithm is used to train the two agents. MADDPG is a multi-agent variant of DDPG, a model-free, off-policy, policy gradient-based algorithm that uses two separate deep neural networks (one actor, one critic) to both explore the stocastic environment and, separately, learn the best policy to achieve maximum reward. DDPG has been shown to be quite effective at continuous control tasks and here the multi-agent version is applied to the continuous control task of playing tennis.
-
-### Exploitation vs. Exploration
-
-When training agents to succeed in an environment where the rules, boundaries and outcomes are completely unknown, it's extremely important to strike the right balance between having the agent explore the environment to learn how it's shaped and exploit what's learned to achieve the highest possible reward. If the agent doesn't explore enough, it might not find the optimal actions to take. If the agent explores too long or too much, it will be slow to achieve the desired reward. 
-
-In the Unity Tennis environment, I found that early exploration is extremely important and taking a wide variety of random actions accelerates learning. However, I also found that allowing the agents to keep experimenting/exploring too far into the simulation hurts long term learning performance.
-
-### Exploratory Boost
-
-To address this balance, I created the Exploratory Boost method. The approach essentially sets aside achieving positive rewards by the agent for a fixed period of time in the beginning of training in favor of wild, broad exploration of the environment. Then, at an optimal time determined through hyperparameter tuning, all exploration is cut off in favor of exploiting what has been experienced thus far with an all out pursuit of maximum reward. My approach discards the conventional deep reinforcement learning approach which slowly shifts agents from exploring to exploiting over time and, instead, focuses on one task (exploration), then the other (exploitation.)
-
-Below are two graphs showing the improved performance of Exploratory Boost. Each had identical hyperparameters, except the noise (exploration) settings. <strong>Notice that in addition to faster overall convergence to the goal, Exploratory Boost also results in far fewer outlier rewards at the low end (blue that's below the yellow trend line.) The agents are experiencing far fewer poor performing episodes. They are more consistent in reaching a decent reward each time. This indicates Exploratory Boost has resulted in a higher quality of learning.</strong>
-
-<img src="Noise_decay_method_versus_Exploratory_Boost.png">
-
-<i>LEFT: Best result from using the traditional slow transition from explore to exploit. RIGHT: Best result from Exploratory Boost approach.</i>
-
-
 ## Setup Instructions
 
 To reproduce this model on a Mac, clone the <a href="https://github.com/udacity/deep-reinforcement-learning">Udacity DRLND repo</a>, then place the tennis.app.zip file in the p3_collab-compet folder. Also place the Juputer notebook there and run it.
