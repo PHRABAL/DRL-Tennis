@@ -10,7 +10,7 @@ A learning rate of 1e-3 on each DNN and batch size of 128 were used along with r
 
 When training agents to succeed in an environment where the rules, boundaries and outcomes are completely unknown, it's extremely important to strike the right balance between having the agent explore the environment to learn how it's shaped and exploit what's learned to achieve the highest possible reward. If the agent doesn't explore enough, it might not find the optimal actions to take. If the agent explores too long, it will be slow to achieve the desired reward. 
 
-In the Unity Tennis environment, I found that early exploration is extremely important and taking a wide variety of random actions accelerates learning. However, I also found that allowing the agents to keep experimenting/exploring too far into the simulation hurts long term learning performance.
+In the Unity Tennis environment, I found that early exploration is extremely important and taking a wide variety of random actions accelerates learning. However, I also found that allowing the agents to keep experimenting/exploring too long into the simulation hurts long term learning performance.
 
 ### Exploratory Boost
 
