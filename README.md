@@ -29,3 +29,5 @@ In the Unity Tennis environment, I found that early exploration is extremely imp
 To address this balance, I created the Exploratory Boost method. The approach essentially sets aside achieving positive rewards by the agent for a fixed period of time in the beginning of training in favor of wild, broad exploration of the environment. Then, at an optimal time determined through hyperparameter tuning, all exploration is cut off in favor of exploiting what has been experienced thus far with an all out pursuit of maximum reward. My approach discards the conventional deep reinforcement learning approach which slowly shifts agents from exploring to exploiting over time and, instead, focuses on one task (exploration), then the other (exploitation.)
 
 Below are two graphs showing the improved performance of Exploratory Boost. Each had identical hyperparameters, except the noise (exploration) settings. LEFT: Best result from using the traditional slow transition from explore to exploit. RIGHT: Best result from Exploratory Boost approach.
+
+<img src="Noise_decay_method_versus_Exploratory_Boost.png">
