@@ -20,9 +20,9 @@ Below are two graphs showing the improved performance of Exploratory Boost. Each
 
 <img src="Noise_decay_method_versus_Exploratory_Boost.png">
 
-<i>LEFT: Best result from using the traditional slow transition from explore to exploit (559 episodes.) RIGHT: Best result from Exploratory Boost approach (384 episodes.)</i>
+<i>LEFT: Best result from using the traditional slow transition from explore to exploit (from OU Noise of 2.0 to 0.01 at a .9999 decay rate per episode) It reached the goal in 559 episodes. RIGHT: Best result from Exploratory Boost approach detailed below that reached the goal in 384 episodes.</i>
 
-I used Ornstein-Uhlenbeck noise with parameters of 0.13 theta and 0.2 sigma. I implemented a noise volume of 6 at the start of training, which mulitplied the OU noise output by 6, resulting in heavy noise and a wide variety of exploratory actions for the first 250 episodes. I then reduced the noise to zero thereafter.
+For Exploratory Boost I used Ornstein-Uhlenbeck noise with parameters of 0.13 theta and 0.2 sigma. I implemented a noise volume of 6 at the start of training, which mulitplied the OU noise output by 6, resulting in heavy noise and a wide variety of exploratory actions for the first 250 episodes. I then reduced the noise to zero thereafter.
 
 ### Results and Future Work
 
