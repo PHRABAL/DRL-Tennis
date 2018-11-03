@@ -30,6 +30,6 @@ To reproduce this model on a Mac:
     git clone https://github.com/udacity/deep-reinforcement-learning.git
     cd deep-reinforcement-learning/python
     pip install .
-
+    
 4. Download the <a href="https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip">custom Unity Tennis agent for Mac OSX</a> and save it in the p3_collab_compet folder of the Udacity repo.
 5. Open Jupyter Notebook and run the MADDPG.ipynb file.
