@@ -34,4 +34,7 @@ To reproduce this model on a Mac:
     pip install .
     
 4. Download the <a href="https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip">custom Unity Tennis agent for Mac OSX</a> and save it in the p3_collab_compet folder of the Udacity repo.
-5. Open Jupyter Notebook and run the MADDPG.ipynb file.
+
+5. Open Jupyter Notebook and run the MADDPG.ipynb file to train the agent. 
+
+6. To watch the agents I trained play tennis, copy the 4 checkpiont files into the p3_collab_compet folder and execute all the notebook cells except sections 6 and 8.
