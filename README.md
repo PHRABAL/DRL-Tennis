@@ -26,6 +26,7 @@ To reproduce this model on a Mac:
 2. Install PyTorch, Jupyter Notebook and Numpy in the Python3 environment.
 
 3. Clone the <a href="https://github.com/udacity/deep-reinforcement-learning">Udacity DRLND repo</a> and install the dependencies by typing the following:
+
     git clone https://github.com/udacity/deep-reinforcement-learning.git
     cd deep-reinforcement-learning/python
     pip install .
