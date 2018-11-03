@@ -22,7 +22,13 @@ The attached code written in Python, using PyTorch and presented in a Jupyter No
 To reproduce this model on a Mac:
 
 1. Install the <a href="https://www.anaconda.com/download/#macos">Anaconda distribution of Python 3</a>
+
 2. Install PyTorch, Jupyter Notebook and Numpy in the Python3 environment.
-3. Clone the <a href="https://github.com/udacity/deep-reinforcement-learning">Udacity DRLND repo</a>
+
+3. Clone the <a href="https://github.com/udacity/deep-reinforcement-learning">Udacity DRLND repo</a> and install the dependencies by typing the following:
+    git clone https://github.com/udacity/deep-reinforcement-learning.git
+    cd deep-reinforcement-learning/python
+    pip install .
+
 4. Download the <a href="https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip">custom Unity Tennis agent for Mac OSX</a> and save it in the p3_collab_compet folder of the Udacity repo.
 5. Open Jupyter Notebook and run the MADDPG.ipynb file.
